@@ -5,11 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "node:coolMathBasic": "node src/common/coolMathBasic.js",
+    "node:common:coolMathTest:basic": "node src/common/coolMathTest.js",
+    "node:common:coolMathTest:common": "node src/common/coolMathTest.cjs",
+    "node:esm:coolMathTest:basic": "node src/esm/coolMathTest.js",
+    "node:esm:coolMathTest:esm": "node src/esm/coolMathTest.mjs"
   },
   "devDependencies": {
-    "typescript": "~5.9.3",
     "vite": "^7.2.4"
   }
 }
