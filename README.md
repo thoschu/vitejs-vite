@@ -31,7 +31,12 @@ Convention: module = code file
 
 ## module bundling
 
-- 
+- https://en.wikipedia.org/wiki/Module_bundler
+
+- https://vite.dev/guide/dep-pre-bundling
 
 ## tree shaking
 
+- https://en.wikipedia.org/wiki/Tree_shaking 
+
+- https://vite.dev/config/build-options
