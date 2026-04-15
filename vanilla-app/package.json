@@ -1,7 +1,7 @@
 {
   "name": "vanilla-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,8 @@
     "node:common:coolMathTest:basic": "node src/common/coolMathTest.js",
     "node:common:coolMathTest:common": "node src/common/coolMathTest.cjs",
     "node:esm:coolMathTest:basic": "node src/esm/coolMathTest.js",
-    "node:esm:coolMathTest:esm": "node src/esm/coolMathTest.mjs"
+    "node:esm:coolMathTest:esm": "node src/esm/coolMathTest.mjs",
+    "server": "npx json-server db.json5"
   },
   "devDependencies": {
     "vite": "^8.0.5"
