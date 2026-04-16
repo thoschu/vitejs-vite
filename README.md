@@ -44,3 +44,7 @@ Convention: module = code file
 ## hot module replacement
 
 - https://vite.dev/guide/features#hot-module-replacement
+
+## assets
+
+- https://vite.dev/guide/assets
