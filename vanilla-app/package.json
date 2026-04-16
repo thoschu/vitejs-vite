@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "build:pretest": "npm run build -- --mode pretest",
     "node:coolMathBasic": "node src/common/coolMathBasic.js",
     "node:common:coolMathTest:basic": "node src/common/coolMathTest.js",
     "node:common:coolMathTest:common": "node src/common/coolMathTest.cjs",

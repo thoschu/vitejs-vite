@@ -15,6 +15,7 @@ export default defineConfig(async ({command, mode}) => {
             server: {
                 port: 4300,
             },
+            envPrefix: ['VITE_', 'API_'],
             ...build
         }
     } else {
