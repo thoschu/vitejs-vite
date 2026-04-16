@@ -56,3 +56,6 @@ Convention: module = code file
 ## plugins
 
 - https://vite.dev/plugins/
+
+## libraries
+ - https://vitejs.dev/guide/features.html#libraries
