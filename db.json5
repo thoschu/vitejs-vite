@@ -5,7 +5,6 @@
     { "id": "2", "text": "another comment about config", "configId": "1" }
   ],
   "config": {
-    plugins: [],
     build: {
       minify: false
     }

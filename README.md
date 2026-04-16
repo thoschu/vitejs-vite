@@ -48,3 +48,8 @@ Convention: module = code file
 ## assets
 
 - https://vite.dev/guide/assets
+
+## config
+
+- https://vite.dev/config/
+- 

@@ -7,10 +7,21 @@ const { cwd } = process;
 export default defineConfig(async ({command, mode}) => {
     const env = loadEnv(mode, cwd(), '');
     const response = await fetch(`http://localhost:3000/${env.API_ENDPOINT}`);
-    const result = await response.json();
+    const build = await response.json();
 
-    return {
-        ...result
+    if (command === 'serve') {
+        return {
+            plugins: [],
+            server: {
+                port: 4300,
+            },
+            ...build
+        }
+    } else {
+        // command === 'build'
+        return {
+            ...build
+        }
     }
 });
 
