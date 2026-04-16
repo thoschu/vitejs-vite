@@ -1,6 +1,8 @@
 /** @type {import('vite').UserConfig} */
 
 import { defineConfig, loadEnv } from 'vite';
+import strip from '@rollup/plugin-strip';
+import { DevTools } from '@vitejs/devtools';
 import { resolve } from 'node:path';
 
 const { cwd } = process;
@@ -24,7 +26,9 @@ export default defineConfig(async ({command, mode}) => {
 
     if (command === 'serve') {
         return {
-            plugins: [],
+            plugins: [
+                await DevTools()
+            ],
             ...viteConfig,
             envPrefix: ['VITE_', 'API_'],
             build: {
@@ -34,6 +38,11 @@ export default defineConfig(async ({command, mode}) => {
     } else {
         // command === 'build'
         return {
+            plugins: [
+                strip({
+                    labels: ['unittest']
+                })
+            ],
             build: {
                 minify: false,
                 rolldownOptions: {

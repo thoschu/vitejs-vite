@@ -20,9 +20,11 @@
     "clear:node_modules": "npx rimraf node_modules"
   },
   "devDependencies": {
+    "@vitejs/devtools": "^0.1.13",
     "vite": "^8.0.5"
   },
   "dependencies": {
+    "@rollup/plugin-strip": "^3.0.4",
     "letter-count": "^5.2.1"
   }
 }

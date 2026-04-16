@@ -52,3 +52,7 @@ Convention: module = code file
 ## config
 
 - https://vite.dev/config/
+
+## plugins
+
+- https://vite.dev/plugins/
