@@ -9,7 +9,10 @@ import hamburgPng from './img/hamburg.png';
 import hamburgWebp from './img/hamburger.webp';
 import hamburgSVG from './img/hamburg-logo.svg';
 
+import { count, countFromFile, info } from 'letter-count';
+
 const mode = import.meta.env.MODE;
+const Log = console.log;
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -44,4 +47,5 @@ document.querySelector('#app').innerHTML = `
 
 setupCounter(document.querySelector('#counter'));
 
-console.log(import.meta.env);
+Log(import.meta.env);
+Log(count('Hamburg - \nGermany 13.07.1977 !'));

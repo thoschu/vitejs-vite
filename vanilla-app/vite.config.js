@@ -5,6 +5,16 @@ import { resolve } from 'node:path';
 
 const { cwd } = process;
 
+function manualChunks(id) {
+    console.log(id);
+
+    if (id.includes('node_modules')) {
+        return 'vendor';
+    }
+
+    return null;
+}
+
 export default defineConfig(async ({command, mode}) => {
     const env = loadEnv(mode, cwd(), '');
     const response = await fetch(`http://localhost:3000/${env.API_ENDPOINT}`);
@@ -18,13 +28,7 @@ export default defineConfig(async ({command, mode}) => {
             ...viteConfig,
             envPrefix: ['VITE_', 'API_'],
             build: {
-                minify: false,
-                rollupOptions: {
-                    input: {
-                        main: resolve(__dirname, 'index.html'),
-                        admin: resolve(__dirname, 'admin/index.html'),
-                    }
-                }
+                minify: false
             }
         }
     } else {
@@ -32,10 +36,13 @@ export default defineConfig(async ({command, mode}) => {
         return {
             build: {
                 minify: false,
-                rollupOptions: {
+                rolldownOptions: {
                     input: {
-                        main: resolve(__dirname, 'index.html'),
-                        admin: resolve(__dirname, 'admin/index.html'),
+                        main: resolve(import.meta.dirname, 'index.html'),
+                        admin: resolve(import.meta.dirname, 'admin/index.html'),
+                    },
+                    output: {
+                        manualChunks
                     }
                 }
             }
