@@ -27,7 +27,7 @@ document.querySelector('#app').innerHTML = `
     <hr>
     <img loading="lazy" decoding="async" src="${germanySvg}" alt="germany logo" />
     <hr>
-    <img loading="lazy" decoding="async" src="${hamburgJpg}" alt="hamburgJpg logo" style="width: 100%; height: 100%; />
+    <img loading="lazy" decoding="async" src="${hamburgJpg}" alt="hamburgJpg logo" style="width: 100%; height: 100%;" />
     <hr>
     <img loading="lazy" decoding="async" src="${hamburgPng}" alt="hamburgPng logo" />
     <hr>
@@ -38,3 +38,5 @@ document.querySelector('#app').innerHTML = `
 `;
 
 setupCounter(document.querySelector('#counter'));
+
+console.log(import.meta.env);
