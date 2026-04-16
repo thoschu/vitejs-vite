@@ -40,3 +40,7 @@ Convention: module = code file
 - https://en.wikipedia.org/wiki/Tree_shaking 
 
 - https://vite.dev/config/build-options
+
+## hot module replacement
+
+- https://vite.dev/guide/features#hot-module-replacement
