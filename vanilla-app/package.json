@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "i": "npm i",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -12,7 +13,10 @@
     "node:common:coolMathTest:common": "node src/common/coolMathTest.cjs",
     "node:esm:coolMathTest:basic": "node src/esm/coolMathTest.js",
     "node:esm:coolMathTest:esm": "node src/esm/coolMathTest.mjs",
-    "server": "npx json-server db.json5"
+    "server": "npx json-server db.json5",
+    "clear:all": "npx concurrently 'npm run clear:dist' 'npm run clear:node_modules'",
+    "clear:dist": "npx rimraf dist",
+    "clear:node_modules": "npx rimraf node_modules"
   },
   "devDependencies": {
     "vite": "^8.0.5"
