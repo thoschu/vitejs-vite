@@ -4,9 +4,9 @@
     { "id": "1", "text": "a comment about config", "configId": "1" },
     { "id": "2", "text": "another comment about config", "configId": "1" }
   ],
-  "config": {
-    build: {
-      minify: false
+  "vite": {
+    server: {
+      port: 4300,
     }
   }
 }

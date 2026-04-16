@@ -13,6 +13,9 @@ const mode = import.meta.env.MODE;
 
 document.querySelector('#app').innerHTML = `
   <div>
+    <hr>
+    <a href="/admin/">Go to Admin</a>
+    <hr>
     <a href="https://vite.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
     </a>
