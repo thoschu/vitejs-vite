@@ -3,6 +3,7 @@
 import { defineConfig, loadEnv } from 'vite';
 import strip from '@rollup/plugin-strip';
 import { DevTools } from '@vitejs/devtools';
+import removeConsole from "vite-plugin-remove-console";
 import { resolve } from 'node:path';
 
 const { cwd } = process;
@@ -39,6 +40,7 @@ export default defineConfig(async ({command, mode}) => {
         // command === 'build'
         return {
             plugins: [
+                removeConsole(),
                 strip({
                     labels: ['unittest']
                 })
