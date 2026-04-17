@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@rollup/plugin-strip": "^3.0.4",
-    "letter-count": "^5.2.1"
+    "letter-count": "^5.2.1",
+    "math-lib": "file:../math-lib"
   }
 }

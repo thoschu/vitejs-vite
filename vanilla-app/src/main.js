@@ -9,7 +9,10 @@ import hamburgPng from './img/hamburg.png';
 import hamburgWebp from './img/hamburger.webp';
 import hamburgSVG from './img/hamburg-logo.svg';
 
-import { count, countFromFile, info } from 'letter-count';
+import { count } from 'letter-count';
+
+import * as mathLibrary from 'math-lib';
+import { factorial } from 'math-lib';
 
 const mode = import.meta.env.MODE;
 const Log = console.log;
@@ -18,6 +21,9 @@ document.querySelector('#app').innerHTML = `
   <div>
     <hr>
     <a href="/admin/">Go to Admin</a>
+    <hr>
+    <p>${mathLibrary.randomUUID()}</p>
+    <p>${factorial(7)}</p>
     <hr>
     <a href="https://vite.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
