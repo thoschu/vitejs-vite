@@ -61,3 +61,32 @@ Convention: module = code file
 
 - https://vite.dev/config/build-options#build-lib
 - https://vitejs.dev/guide/features.html#libraries
+- https://vitejs.dev/guide/build.html#library-mode
+
+**Typical file extensions**
+
+> CJS: .cjs or sometimes .js
+> 
+> AMD: usually .js
+> 
+> UMD: often .umd.js
+> 
+> ESM: .mjs or .js with "type": "module"
+> 
+> IIFE: often .iife.js
+
+**Easy way to remember**
+
+> CJS = old Node format
+> 
+> AMD = old browser format
+> 
+> UMD = universal format for older systems
+> 
+> ESM = modern standard
+> 
+> IIFE = not a module system, just an encapsulation pattern
+
+```bash
+npm i '../math-lib'
+```

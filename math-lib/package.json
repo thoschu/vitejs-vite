@@ -1,0 +1,39 @@
+{
+  "name": "math-lib",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/math-lib.js",
+  "main": "./dist/math-lib.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/math-lib.js",
+      "require": "./dist/math-lib.umd.cjs"
+    }
+  },
+  "scripts": {
+    "i": "npm install",
+    "ci": "npm clean-install --no-audit --no-fund --prefer-offline",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "postinstall": "npm run build",
+    "clear:all": "npx concurrently 'npm run clear:dist' 'npm run clear:node_modules'",
+    "clear:dist": "npx rimraf dist",
+    "clear:node_modules": "npx rimraf node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/ramda": "^0.31.1",
+    "@types/uuid": "^10.0.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.4"
+  },
+  "dependencies": {
+    "ramda": "^0.32.0",
+    "uuid": "^13.0.0"
+  }
+}

@@ -62,8 +62,8 @@ export function getRandomInt(min: number, max:number): number {
     return add(Math.floor(multiply(random, (add(subtract(max, min), 1)))), min);
 }
 
-export function randomUUID(type: string = 'v4'): string {
-    let uuid: string = '';
+export function randomUUID(type: string = ''): string {
+    let uuid: string;
 
     switch ( type ) {
         case 'v1':
@@ -82,6 +82,6 @@ export function randomUUID(type: string = 'v4'): string {
     return uuid;
 }
 
-export function uuidValidateV4(uuid: string, version: number): boolean {
+export function validateUuid(uuid: string, version: number): boolean {
     return and<boolean, boolean>(uuidValidate(uuid), equals<number>(uuidVersion(uuid), version));
 }
