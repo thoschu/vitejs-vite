@@ -3,22 +3,10 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "module": "./dist/math-lib.js",
   "main": "./dist/math-lib.js",
   "types": "./src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/src/index.d.ts",
-      "import": "./dist/math-lib.js",
-      "require": "./dist/math-lib.umd.cjs",
-      "node": "./dist/math-lib.cjs",
-      "default": "./dist/math-lib.js"
-    },
-    "./iife": "./dist/math-lib.iife.js"
-  },
   "scripts": {
     "i": "npm install",
     "ci": "npm clean-install --no-audit --no-fund --prefer-offline",
@@ -41,5 +29,15 @@
     "@mlc-ai/web-llm": "^0.2.82",
     "ramda": "^0.32.0",
     "uuid": "^13.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/math-lib.js",
+      "require": "./dist/math-lib.umd.cjs",
+      "node": "./dist/math-lib.cjs",
+      "default": "./dist/math-lib.js"
+    },
+    "./iife": "./dist/math-lib.iife.js"
   }
 }

@@ -20,6 +20,13 @@ export default defineConfig({
                 'iife'
             ]
         },
+        rolldownOptions: {
+            external: [
+                'ramda',
+                '@mlc-ai/web-llm',
+                'uuid'
+            ],
+        }
     }
 });
 
