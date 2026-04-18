@@ -1,6 +1,21 @@
 import { add, and, divide, equals, gte, lt, lte, modulo, multiply, or, subtract } from 'ramda';
 import { v1, v4, v6, v7, version as uuidVersion,  validate as uuidValidate } from 'uuid';
-//import {CreateMLCEngine, type InitProgressReport, MLCEngine} from '@mlc-ai/web-llm';
+import {
+    CreateMLCEngine,
+    MLCEngine,
+    type ChatCompletion,
+    type ChatCompletionMessageParam,
+    type ChatCompletionRequestNonStreaming,
+    type InitProgressReport,
+    type ChatCompletionSystemMessageParam,
+    type ChatCompletionUserMessageParam
+} from '@mlc-ai/web-llm';
+
+// type ChatCompletionMessageParam =
+//     | { role: "system"; content: string }
+//     | { role: "user"; content: string | ChatCompletionContentPart[]; name?: string }
+//     | { role: "assistant"; content?: string | null; name?: string; tool_calls?: ChatCompletionMessageToolCall[] }
+//     | { role: "tool"; content: string; tool_call_id: string };
 
 export function average(...args: Array<number>): number {
     const { length: argsLength }: Record<'length', number> = args;
@@ -86,15 +101,34 @@ export function randomUUID(type: string = ''): string {
 export function validateUuid(uuid: string, version: number): boolean {
     return and<boolean, boolean>(uuidValidate(uuid), equals<number>(uuidVersion(uuid), version));
 }
-//
-// export async function webLlm(text: string): Promise<unknown> {
-//     const engine: MLCEngine = await CreateMLCEngine('Llama-3.1-8B-Instruct', {
-//         initProgressCallback: (progress:  InitProgressReport): void => {
-//             console.log("Model loading progress:", progress);
-//         }
-//     });
-//
-//     console.log(engine);
-//
-//     return text;
-// }
+
+export async function webLlm(text: string, selectedModel: string = 'Llama-3.1-8B-Instruct-q4f32_1-MLC'): Promise<ChatCompletion> {
+    const engine: MLCEngine = await CreateMLCEngine(selectedModel, {
+        initProgressCallback: (progress:  InitProgressReport): void => {
+            console.log('Model loading progress:', progress);
+        }
+    });
+
+    const system: ChatCompletionSystemMessageParam = {
+        role: 'system',
+        content: 'You are a helpful AI assistant.'
+    };
+
+    const user: ChatCompletionUserMessageParam = {
+        role: 'user',
+        content: String(text ?? "")
+    };
+
+    const messages: Array<ChatCompletionMessageParam> = [
+        {...system},
+        {...user},
+    ];
+
+    const request: ChatCompletionRequestNonStreaming = {
+        messages,
+        tools: undefined,
+        tool_choice: undefined
+    };
+
+    return engine.chat.completions.create(request);
+}

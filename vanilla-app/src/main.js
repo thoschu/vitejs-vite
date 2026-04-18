@@ -26,6 +26,13 @@ document.querySelector('#app').innerHTML = `
     <p>${mathLibrary.randomUUID()}</p>
     <p>${factorial(7)}</p>
     <hr>
+    <div>
+        <textarea id="input" placeholder="Stelle eine Frage ans WebLLM..."></textarea>
+        <br>
+        <button id="button" type="submit">Senden</button>
+        <p id="result" class="animate__animated">...</p>
+    </div>
+    <hr>
     <a href="https://vite.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
     </a>
@@ -52,7 +59,12 @@ document.querySelector('#app').innerHTML = `
   </div>
 `;
 
-setupCounter(document.querySelector('#counter'));
+setupCounter(
+    document.querySelector('#counter'),
+    document.querySelector('#input'),
+    document.querySelector('#button'),
+    document.querySelector('#result')
+);
 
 Log(import.meta.env);
 Log(count('Hamburg - \nGermany 13.07.1977 !'));
