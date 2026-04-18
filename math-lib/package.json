@@ -8,10 +8,12 @@
   ],
   "module": "./dist/math-lib.js",
   "main": "./dist/math-lib.umd.cjs",
+  "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/math-lib.js",
-      "require": "./dist/math-lib.umd.cjs"
+      "require": "./dist/math-lib.umd.cjs",
+      "types": "./dist/src/index.d.ts"
     }
   },
   "scripts": {

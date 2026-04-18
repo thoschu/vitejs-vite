@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import { setupCounter } from './counter.js';
 
 import germanySvg from '/germany.svg';
+
 import hamburgJpg from './img/hamburg.jpg';
 import hamburgPng from './img/hamburg.png';
 import hamburgWebp from './img/hamburger.webp';

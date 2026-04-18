@@ -9,6 +9,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly counter: WritableSignal<number> = signal<number>(0);
-
   protected readonly title: WritableSignal<string> = signal<string>('vite-project');
 }
