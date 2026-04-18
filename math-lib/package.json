@@ -22,7 +22,6 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "echo 'Error: no vite preview available' && exit 1",
-    "postinstall": "npm run build",
     "clear:all": "npx concurrently 'npm run clear:dist' 'npm run clear:node_modules'",
     "clear:dist": "npx rimraf dist",
     "clear:node_modules": "npx rimraf node_modules"
