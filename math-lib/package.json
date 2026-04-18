@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "module": "./dist/math-lib.js",
   "main": "./dist/math-lib.js",
   "types": "./src/index.d.ts",
