@@ -11,10 +11,13 @@
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/math-lib.js",
       "require": "./dist/math-lib.umd.cjs",
-      "types": "./dist/src/index.d.ts"
-    }
+      "node": "./dist/math-lib.cjs",
+      "default": "./dist/math-lib.js"
+    },
+    "./iife": "./dist/math-lib.iife.js"
   },
   "scripts": {
     "i": "npm install",
