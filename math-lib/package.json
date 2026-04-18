@@ -35,6 +35,7 @@
     "vite": "^8.0.4"
   },
   "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.82",
     "ramda": "^0.32.0",
     "uuid": "^13.0.0"
   }

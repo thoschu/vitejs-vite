@@ -1,5 +1,6 @@
 import { add, and, divide, equals, gte, lt, lte, modulo, multiply, or, subtract } from 'ramda';
 import { v1, v4, v6, v7, version as uuidVersion,  validate as uuidValidate } from 'uuid';
+//import {CreateMLCEngine, type InitProgressReport, MLCEngine} from '@mlc-ai/web-llm';
 
 export function average(...args: Array<number>): number {
     const { length: argsLength }: Record<'length', number> = args;
@@ -85,3 +86,15 @@ export function randomUUID(type: string = ''): string {
 export function validateUuid(uuid: string, version: number): boolean {
     return and<boolean, boolean>(uuidValidate(uuid), equals<number>(uuidVersion(uuid), version));
 }
+//
+// export async function webLlm(text: string): Promise<unknown> {
+//     const engine: MLCEngine = await CreateMLCEngine('Llama-3.1-8B-Instruct', {
+//         initProgressCallback: (progress:  InitProgressReport): void => {
+//             console.log("Model loading progress:", progress);
+//         }
+//     });
+//
+//     console.log(engine);
+//
+//     return text;
+// }
