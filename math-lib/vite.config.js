@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 
 export default defineConfig({
     plugins: [
-        dts(),
+        dts({ tsconfigPath: './tsconfig.json' })
     ],
     build: {
         minify: false,

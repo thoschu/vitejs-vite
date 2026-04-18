@@ -7,8 +7,8 @@
     "dist"
   ],
   "module": "./dist/math-lib.js",
-  "main": "./dist/math-lib.umd.cjs",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/math-lib.js",
+  "types": "./src/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
