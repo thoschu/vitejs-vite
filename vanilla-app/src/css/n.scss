@@ -1,0 +1,24 @@
+textarea {
+    border: #74ff64 solid 2px;
+}
+
+div {
+    &#image-gallery {
+        img {
+            border: red 13px dotted;
+        }
+
+        hr {
+            width: 50%;
+            margin: 20px auto;
+
+            &.divider {
+                border: 7px solid yellowgreen;
+
+                &:not(.off) {
+                    border: 7px solid deeppink;
+                }
+            }
+        }
+    }
+}

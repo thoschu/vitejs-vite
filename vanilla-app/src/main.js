@@ -15,6 +15,13 @@ import { count } from 'letter-count';
 import * as mathLibrary from 'math-lib';
 import { factorial } from 'math-lib';
 
+import './css/one.css';
+import './css/two.css';
+import cssAssets from './css/three.module.css';
+import './css/n.scss';
+
+console.log(cssAssets);
+
 const mode = import.meta.env.MODE;
 const Log = console.log;
 
@@ -26,10 +33,10 @@ document.querySelector('#app').innerHTML = `
   <div>
     ${Object.values(icons).map(path => `<img width='13%' src='${path.default}' alt='icon-${path.default.split('/').pop().split('.')[0]}'>`)}
     <hr>
-    <a href="/admin/">Go to Admin</a>
+    <a class="${cssAssets.red}" href="/admin/">Go to Admin</a>
     <hr>
-    <p>${mathLibrary.randomUUID()}</p>
-    <p>${factorial(7)}</p>
+    <p class="${cssAssets.blue}">${mathLibrary.randomUUID()}</p>
+    <h1>${factorial(7)}</h1>
     <hr>
     <div>
         <textarea id="input" placeholder="Stelle eine Frage ans WebLLM..."></textarea>
@@ -52,15 +59,17 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
     <hr>
-    <img loading="lazy" decoding="async" src="${germanySvg}" alt="germany logo" />
-    <hr>
-    <img loading="lazy" decoding="async" src="${hamburgJpg}" alt="hamburgJpg logo" style="width: 100%; height: 100%;" />
-    <hr>
-    <img loading="lazy" decoding="async" src="${hamburgPng}" alt="hamburgPng logo" />
-    <hr>
-    <img loading="lazy" decoding="async" src="${hamburgWebp}" alt="hamburgWebp logo" />
-    <hr>
-    <img loading="lazy" decoding="async" src="${hamburgSVG}" alt="hamburgSVG logo" />
+    <div id="image-gallery">
+        <img loading="lazy" decoding="async" src="${germanySvg}" alt="germany logo" />
+        <hr class="divider off">
+        <img loading="lazy" decoding="async" src="${hamburgJpg}" alt="hamburgJpg logo" style="width: 100%; height: 100%;" />
+        <hr class="divider">
+        <img loading="lazy" decoding="async" src="${hamburgPng}" alt="hamburgPng logo" />
+        <hr class="divider off">
+        <img loading="lazy" decoding="async" src="${hamburgWebp}" alt="hamburgWebp logo" />
+        <hr class="divider">
+        <img loading="lazy" decoding="async" src="${hamburgSVG}" alt="hamburgSVG logo" />
+    </div>
   </div>
 `;
 
