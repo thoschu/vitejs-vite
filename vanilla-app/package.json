@@ -6,8 +6,10 @@
   "scripts": {
     "i": "npm i",
     "dev": "vite",
+    "dev:host": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
+    "preview:host": "vite preview --host",
     "preinstall": "npm run npm:math-lib -- install && npm run npm:math-lib -- run build",
     "npm:math-lib": "npm --prefix ../math-lib",
     "postinstall": "echo '\\x1b[101m\\x1b[97mINFO: npm run server\\x1b[0m' && exit 0",
