@@ -1,6 +1,5 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import {Component, effect, input, InputSignal, signal, WritableSignal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { factorial } from 'math-lib';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +9,14 @@ import { factorial } from 'math-lib';
 })
 export class App {
   protected readonly counter: WritableSignal<number> = signal<number>(0);
-  protected readonly title: WritableSignal<string> = signal<string>('vite-project');
+  protected readonly title: WritableSignal<string> = signal<string>('');
+  public readonly hello: InputSignal<string> = input<string>('vite-project');
 
   constructor() {
-    console.log(factorial(13));
+    effect(() => {
+      const inputValue: string = this.hello();
+
+      this.title.set(`${inputValue}!`);
+    });
   }
 }

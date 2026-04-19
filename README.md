@@ -90,3 +90,11 @@ Convention: module = code file
 ```bash
 npm i '../math-lib'
 ```
+
+## vitest
+
+- https://semaphore.io/blog/aaa-pattern-test-automation
+
+- https://vitest.dev/
+
+- https://stateofjs.com/en-US

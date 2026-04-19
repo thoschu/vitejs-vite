@@ -20,12 +20,11 @@ export default defineConfig({
             formats: ['es', 'cjs', 'umd', 'iife']
         },
         rolldownOptions: {
-            external: ['ramda', '@mlc-ai/web-llm', 'uuid'],
+            external: ['ramda', 'uuid'],
             output: {
                 globals: {
                     ramda: 'ramda',
-                    uuid: 'uuid',
-                    '@mlc-ai/web-llm': 'webllm'
+                    uuid: 'uuid'
                 }
             }
         }
