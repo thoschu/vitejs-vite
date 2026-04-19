@@ -28,8 +28,7 @@
     "vite:bundle:visualizer:sunburst": "npm run vite:bundle:visualizer -- -t sunburst",
     "vite:bundle:visualizer:network": "npm run vite:bundle:visualizer -- -t network",
     "vite:bundle:visualizer:raw-data": "npm run vite:bundle:visualizer -- -t raw-data",
-    "vite:bundle:visualizer:list": "npm run vite:bundle:visualizer -- -t list",
-    "vite:bundle:analyzer": "npx vite-bundle-analyzer"
+    "vite:bundle:visualizer:list": "npm run vite:bundle:visualizer -- -t list"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
