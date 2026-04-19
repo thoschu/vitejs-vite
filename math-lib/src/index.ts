@@ -17,6 +17,8 @@ import {
 //     | { role: "assistant"; content?: string | null; name?: string; tool_calls?: ChatCompletionMessageToolCall[] }
 //     | { role: "tool"; content: string; tool_call_id: string };
 
+const defaultModel: string = 'Llama-3.1-8B-Instruct-q4f32_1-MLC';
+
 export function average(...args: Array<number>): number {
     const { length: argsLength }: Record<'length', number> = args;
 
@@ -102,7 +104,7 @@ export function validateUuid(uuid: string, version: number): boolean {
     return and<boolean, boolean>(uuidValidate(uuid), equals<number>(uuidVersion(uuid), version));
 }
 
-export async function webLlm(text: string, selectedModel: string = 'Llama-3.1-8B-Instruct-q4f32_1-MLC'): Promise<ChatCompletion> {
+export async function webLlm(text: string, selectedModel: string = defaultModel): Promise<ChatCompletion> {
     const engine: MLCEngine = await CreateMLCEngine(selectedModel, {
         initProgressCallback: (progress:  InitProgressReport): void => {
             console.log('Model loading progress:', progress);

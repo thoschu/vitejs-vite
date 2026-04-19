@@ -12,13 +12,8 @@ export default defineConfig({
         minify: false,
         lib: {
             entry: resolve(import.meta.dirname, 'src', 'index.ts'),
-            name: 'mathVitePlugin',
-            formats: [
-                'es',
-                'cjs',
-                'umd',
-                'iife'
-            ]
+            name: 'mathViteLib',
+            formats: ['es', 'cjs', 'umd', 'iife']
         },
         rolldownOptions: {
             external: [
@@ -26,6 +21,13 @@ export default defineConfig({
                 '@mlc-ai/web-llm',
                 'uuid'
             ],
+            output: {
+                globals: {
+                    ramda: 'ramda',
+                    uuid: 'uuid',
+                    '@mlc-ai/web-llm': 'webllm'
+                }
+            }
         }
     }
 });
