@@ -12,6 +12,7 @@
   "scripts": {
     "i": "npm install",
     "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --fix",
     "ci": "npm clean-install --no-audit --no-fund --prefer-offline",
     "dev": "vite",
     "build": "tsc -p tsconfig.build.json && vite build",
@@ -61,6 +62,9 @@
     "./iife": "./dist/math-lib.iife.js"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*":  [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

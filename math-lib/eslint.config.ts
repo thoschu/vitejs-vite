@@ -4,6 +4,8 @@ import tsEsLint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 import pluginSecurity from 'eslint-plugin-security';
 import noSecrets from 'eslint-plugin-no-secrets';
+import eslintConfigPrettierFlat from 'eslint-config-prettier/flat';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
 
 export default defineConfig([
   { ignores: ['dist'] },
@@ -14,18 +16,19 @@ export default defineConfig([
     languageOptions: {
       ecmaVersion: 2023,
       globals: globals.browser
-    },
+    }
   },
   {
     extends: [js.configs.recommended, ...tsEsLint.configs.recommended],
     files: ['**/*.ts'],
     languageOptions: {
       ecmaVersion: 2023,
-      globals: globals.browser,
+      globals: globals.browser
     },
     plugins: {
+      'no-secrets': noSecrets,
       security: pluginSecurity,
-      'no-secrets': noSecrets
+      prettier: eslintPluginPrettier
     },
     ignores: ['__tests/**'],
     rules: {
@@ -33,8 +36,10 @@ export default defineConfig([
       'no-unused-vars': 'error',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
-      'no-secrets/no-secrets': 'error'
+      'no-secrets/no-secrets': 'error',
+      'prettier/prettier': 'warn'
     }
   },
-  tsEsLint.configs.recommended
+  tsEsLint.configs.recommended,
+  eslintConfigPrettierFlat
 ]);
