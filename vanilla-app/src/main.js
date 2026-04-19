@@ -18,8 +18,13 @@ import { factorial } from 'math-lib';
 const mode = import.meta.env.MODE;
 const Log = console.log;
 
+const icons = await import.meta.glob('./img/icons/*.png', { eager: true });
+
+console.dir(icons);
+
 document.querySelector('#app').innerHTML = `
   <div>
+    ${Object.values(icons).map(path => `<img width='13%' src='${path.default}' alt='icon-${path.default.split('/').pop().split('.')[0]}'>`)}
     <hr>
     <a href="/admin/">Go to Admin</a>
     <hr>
