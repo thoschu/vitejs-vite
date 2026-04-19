@@ -6,7 +6,9 @@ import { resolve } from 'node:path';
 
 export default defineConfig({
     plugins: [
-        dts({ tsconfigPath: './tsconfig.json' })
+        dts({
+            tsconfigPath: './tsconfig.build.json'
+        })
     ],
     build: {
         minify: false,
@@ -16,11 +18,7 @@ export default defineConfig({
             formats: ['es', 'cjs', 'umd', 'iife']
         },
         rolldownOptions: {
-            external: [
-                'ramda',
-                '@mlc-ai/web-llm',
-                'uuid'
-            ],
+            external: ['ramda', '@mlc-ai/web-llm', 'uuid'],
             output: {
                 globals: {
                     ramda: 'ramda',

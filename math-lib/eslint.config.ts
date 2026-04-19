@@ -1,8 +1,9 @@
 import js from '@eslint/js';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import tsEsLint from 'typescript-eslint';
 import { defineConfig } from 'eslint/config';
 import pluginSecurity from 'eslint-plugin-security';
+import noSecrets from 'eslint-plugin-no-secrets';
 
 export default defineConfig([
   { ignores: ['dist'] },
@@ -16,22 +17,27 @@ export default defineConfig([
     },
   },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    extends: [
+        js.configs.recommended,
+      ...tsEsLint.configs.recommended
+    ],
     files: ["**/*.ts"],
     languageOptions: {
       ecmaVersion: 2023,
       globals: globals.browser,
     },
     plugins: {
-      pluginSecurity
+      security: pluginSecurity,
+      "no-secrets": noSecrets,
     },
     ignores: ["__tests/**"],
     rules: {
-      "no-console": "warn",
-      "no-unused-vars": "error",
+      'no-console': 'warn',
+      'no-unused-vars': 'error',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
+      'no-secrets/no-secrets': 'error',
     },
   },
-  tseslint.configs.recommended,
+  tsEsLint.configs.recommended,
 ]);
