@@ -8,36 +8,33 @@ import noSecrets from 'eslint-plugin-no-secrets';
 export default defineConfig([
   { ignores: ['dist'] },
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
+    files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     plugins: { js },
-    extends: ["js/recommended"],
+    extends: [js.configs.recommended],
     languageOptions: {
       ecmaVersion: 2023,
       globals: globals.browser
     },
   },
   {
-    extends: [
-        js.configs.recommended,
-      ...tsEsLint.configs.recommended
-    ],
-    files: ["**/*.ts"],
+    extends: [js.configs.recommended, ...tsEsLint.configs.recommended],
+    files: ['**/*.ts'],
     languageOptions: {
       ecmaVersion: 2023,
       globals: globals.browser,
     },
     plugins: {
       security: pluginSecurity,
-      "no-secrets": noSecrets,
+      'no-secrets': noSecrets
     },
-    ignores: ["__tests/**"],
+    ignores: ['__tests/**'],
     rules: {
       'no-console': 'warn',
       'no-unused-vars': 'error',
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-explicit-any': 'error',
-      'no-secrets/no-secrets': 'error',
-    },
+      'no-secrets/no-secrets': 'error'
+    }
   },
-  tsEsLint.configs.recommended,
+  tsEsLint.configs.recommended
 ]);
