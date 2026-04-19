@@ -20,7 +20,8 @@
     "server": "npx json-server ../db.json5",
     "clear:all": "npx concurrently 'npm run clear:dist' 'npm run clear:node_modules'",
     "clear:dist": "npx rimraf dist",
-    "clear:node_modules": "npx rimraf node_modules"
+    "clear:node_modules": "npx rimraf node_modules",
+    "vite:bundle:visualizer": "npx vite-bundle-visualizer"
   },
   "devDependencies": {
     "@vitejs/devtools": "^0.1.13",

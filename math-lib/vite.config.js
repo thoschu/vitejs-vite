@@ -3,12 +3,14 @@
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { resolve } from 'node:path';
+import { analyzer } from 'vite-bundle-analyzer'
 
 export default defineConfig({
     plugins: [
         dts({
             tsconfigPath: './tsconfig.build.json'
-        })
+        }),
+        analyzer()
     ],
     build: {
         minify: false,
