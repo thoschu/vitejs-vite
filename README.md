@@ -1,4 +1,4 @@
-# vite
+# vite and vitest
 
 https://vite.dev/
 
