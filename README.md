@@ -53,11 +53,11 @@ Convention: module = code file
 
 - https://vite.dev/config/
 
-## plugins
+## Official Plugins
 
 - https://vite.dev/plugins/
 
-## libraries
+## building libraries with vite
 
 - https://vite.dev/config/build-options#build-lib
 - https://vitejs.dev/guide/features.html#libraries
@@ -98,3 +98,9 @@ npm i '../math-lib'
 - https://vitest.dev/
 
 - https://stateofjs.com/en-US
+
+## vite-plugin
+
+- https://vitejs.dev/guide/api-plugin.html
+
+- https://vite.dev/plugins/

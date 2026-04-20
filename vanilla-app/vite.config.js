@@ -3,8 +3,9 @@
 import { defineConfig, loadEnv } from 'vite';
 import strip from '@rollup/plugin-strip';
 import { DevTools } from '@vitejs/devtools';
-import removeConsole from "vite-plugin-remove-console";
+import removeConsole from 'vite-plugin-remove-console';
 import { resolve } from 'node:path';
+import legacy from '@vitejs/plugin-legacy';
 
 const { cwd } = process;
 
@@ -41,6 +42,9 @@ export default defineConfig(async ({command, mode}) => {
         return {
             plugins: [
                 removeConsole(),
+                legacy({
+                    targets: ['defaults', 'not IE 11'],
+                }),
                 strip({
                     labels: ['unittest']
                 })

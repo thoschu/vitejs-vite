@@ -38,13 +38,6 @@ document.querySelector('#app').innerHTML = `
     <p class="${cssAssets.blue}">${mathLibrary.randomUUID()}</p>
     <h1>${factorial(7)}</h1>
     <hr>
-    <div>
-        <textarea id="input" placeholder="Stelle eine Frage ans WebLLM..."></textarea>
-        <br>
-        <button id="button" type="submit">Senden</button>
-        <p id="result" class="animate__animated">...</p>
-    </div>
-    <hr>
     <a href="https://vite.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
     </a>
