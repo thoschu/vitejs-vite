@@ -104,3 +104,7 @@ npm i '../math-lib'
 - https://vitejs.dev/guide/api-plugin.html
 
 - https://vite.dev/plugins/
+
+## angular
+
+- https://angular.dev/guide/testing/migrating-to-vitest
