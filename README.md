@@ -108,3 +108,7 @@ npm i '../math-lib'
 ## angular
 
 - https://angular.dev/guide/testing/migrating-to-vitest
+
+## nx
+
+- https://nx.dev/docs/technologies/build-tools/vite/introduction
