@@ -1,0 +1,77 @@
+{
+  "name": "math-lib",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/math-lib.js",
+  "main": "./dist/math-lib.js",
+  "types": "./src/index.d.ts",
+  "scripts": {
+    "i": "npm install",
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --fix",
+    "ci": "npm clean-install --no-audit --no-fund --prefer-offline",
+    "dev": "vite",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "preview": "echo 'Error: no vite preview available' && exit 1",
+    "test": "vitest",
+    "clear:all": "npx concurrently 'npm run clear:dist' 'npm run clear:node_modules'",
+    "clear:dist": "npx rimraf dist",
+    "clear:node_modules": "npx rimraf node_modules",
+    "tsc:listFiles": "npx tsc -p tsconfig.json --listFiles",
+    "prettier:write": "npx prettier ./src --write",
+    "prettier:check": "npx prettier ./src --check",
+    "prepare": "husky",
+    "vite:bundle:visualizer": "npx vite-bundle-visualizer",
+    "vite:bundle:visualizer:sunburst": "npm run vite:bundle:visualizer -- -t sunburst",
+    "vite:bundle:visualizer:network": "npm run vite:bundle:visualizer -- -t network",
+    "vite:bundle:visualizer:raw-data": "npm run vite:bundle:visualizer -- -t raw-data",
+    "vite:bundle:visualizer:list": "npm run vite:bundle:visualizer -- -t list"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/eslint-plugin-security": "^3.0.1",
+    "@types/node": "^25.6.0",
+    "@types/ramda": "^0.31.1",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^10.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-no-secrets": "^2.3.3",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-security": "^4.0.0",
+    "globals": "^17.5.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.4",
+    "vite-bundle-analyzer": "^1.3.7",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.1.4"
+  },
+  "dependencies": {
+    "ramda": "^0.32.0",
+    "uuid": "^13.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/math-lib.js",
+      "require": "./dist/math-lib.umd.cjs",
+      "node": "./dist/math-lib.cjs",
+      "default": "./dist/math-lib.js"
+    },
+    "./iife": "./dist/math-lib.iife.js"
+  },
+  "lint-staged": {
+    "**/*": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

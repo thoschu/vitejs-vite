@@ -1,0 +1,49 @@
+{
+  "name": "vanilla-app",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "i": "npm i",
+    "dev": "vite",
+    "dev:host": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:host": "vite preview --host",
+    "preinstall": "npm run npm:math-lib -- install && npm run npm:math-lib -- run build",
+    "npm:math-lib": "npm --prefix ../math-lib",
+    "postinstall": "echo '\\x1b[101m\\x1b[97mINFO: npm run server\\x1b[0m' && exit 0",
+    "build:pretest": "npm run build -- --mode pretest",
+    "node:coolMathBasic": "node src/common/coolMathBasic.js",
+    "node:common:coolMathTest:basic": "node src/common/coolMathTest.js",
+    "node:common:coolMathTest:common": "node src/common/coolMathTest.cjs",
+    "node:esm:coolMathTest:basic": "node src/esm/coolMathTest.js",
+    "node:esm:coolMathTest:esm": "node src/esm/coolMathTest.mjs",
+    "server": "npx json-server ../db.json5",
+    "clear:all": "npx concurrently 'npm run clear:dist' 'npm run clear:node_modules'",
+    "clear:dist": "npx rimraf dist",
+    "clear:node_modules": "npx rimraf node_modules",
+    "vite:bundle:visualizer": "npx vite-bundle-visualizer",
+    "vite:bundle:visualizer:sunburst": "npm run vite:bundle:visualizer -- -t sunburst",
+    "vite:bundle:visualizer:network": "npm run vite:bundle:visualizer -- -t network",
+    "vite:bundle:visualizer:raw-data": "npm run vite:bundle:visualizer -- -t raw-data",
+    "vite:bundle:visualizer:list": "npm run vite:bundle:visualizer -- -t list",
+    "vite:bundle:analyzer": "npx vite-bundle-analyzer --analyzerPort 8888"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@vitejs/devtools": "^0.1.13",
+    "@vitejs/plugin-legacy": "^8.0.1",
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5",
+    "vite": "^8.0.5",
+    "vite-bundle-analyzer": "^1.3.7",
+    "vite-plugin-inspect": "^11.3.3",
+    "vite-plugin-remove-console": "^2.2.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-strip": "^3.0.4",
+    "letter-count": "^5.2.1",
+    "math-lib": "file:../math-lib"
+  }
+}
