@@ -7,11 +7,13 @@ import removeConsole from 'vite-plugin-remove-console';
 import { resolve } from 'node:path';
 import legacy from '@vitejs/plugin-legacy';
 
+import { watermarkPlugin } from './plugins/watermark.plugin.ts';
+
+import inspect from 'vite-plugin-inspect'
+
 const { cwd } = process;
 
 function manualChunks(id) {
-    console.log(id);
-
     if (id.includes('node_modules')) {
         return 'vendor';
     }
@@ -29,7 +31,13 @@ export default defineConfig(async ({command, mode}) => {
     if (command === 'serve') {
         return {
             plugins: [
-                await DevTools()
+                await DevTools(),
+                watermarkPlugin({
+                    text: 'Ｔｏｍ Ｓ.',
+                    color: 'red',
+                    fontSize: 64
+                }),
+                inspect()
             ],
             ...viteConfig,
             envPrefix: ['VITE_', 'API_'],
@@ -47,7 +55,9 @@ export default defineConfig(async ({command, mode}) => {
                 }),
                 strip({
                     labels: ['unittest']
-                })
+                }),
+                watermarkPlugin(),
+                inspect()
             ],
             build: {
                 minify: false,
