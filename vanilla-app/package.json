@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "i": "npm i",
+    "i": "npm i --legacy-peer-deps",
     "dev": "vite",
     "dev:host": "vite --host",
     "build": "vite build",
