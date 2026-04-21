@@ -13,7 +13,7 @@ export class App {
   public readonly hello: InputSignal<string> = input<string>('vite-project');
 
   constructor() {
-    effect(() => {
+    effect((): void => {
       const inputValue: string = this.hello();
 
       this.title.set(`${inputValue}!`);
