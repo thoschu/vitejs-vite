@@ -236,7 +236,7 @@
       <p>Congratulations! Your app is running. 🎉</p>
       <hr>
       @let countSize = 1;
-      <button class="button" (click)="counter.update((res) => res + countSize)">{{ counter() }}</button>
+      <button class="button" (click)="counter.update((res) => R.add(res, countSize))">{{ counter() }}</button>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
